@@ -1,0 +1,25 @@
+From 9b9f458e6608cd1f99956be2a2e12718ff71d604 Mon Sep 17 00:00:00 2001
+From: shiptux <shiptux@gmail.com>
+Date: Thu, 21 Mar 2024 20:03:05 +0800
+Subject: [PATCH] Solution for build in yocto.
+
+---
+ CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 5359553..713af81 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -56,7 +56,7 @@ if (BUILD_ONLY_PLUGIN)
+ # Dup a little bit option here.
+ include(CompilerSettings)
+ else()
+-include("${FCITX_INSTALL_CMAKECONFIG_DIR}/Fcitx5Utils/Fcitx5CompilerSettings.cmake")
++include("${CMAKE_CURRENT_SOURCE_DIR}/../recipe-sysroot/${FCITX_INSTALL_CMAKECONFIG_DIR}/Fcitx5Utils/Fcitx5CompilerSettings.cmake")
+ endif()
+ 
+ set(Fcitx5Qt6_INCLUDE_INSTALL_DIR ${CMAKE_INSTALL_INCLUDEDIR}/Fcitx5Qt6)
+-- 
+2.43.0
+
